@@ -13,6 +13,7 @@ non-tpolecat contributors thus far: n4to4, Alexa DeWit
   - The `yolo` member on `Transactor` is no longer stable, so you cannot `import xa.yolo._` anymore; instead you must say `val y = xa.yolo; import y._`. Because this is typically done with `initialCommands` in sbt it's unlikely to be a big deal.
   - `Transactor` is now a final case class with two type parameters which means existing declarations will be wrong. Book update TBD.
 - Note that the interpreter/transactor changes require `Monad` instances at a few more call sites, which should be transparent in most cases but may require Cats users to `import fs2.interop.cats._` here and there … if scalac is claiming there's no instance available after upgrading that's probably why.
+- Updated Posgtgres JDBC driver to v42.0.0.
 
 ### <a name="0.4.1"></a>New and Noteworthy for Version 0.4.1
 
